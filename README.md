@@ -1,4 +1,4 @@
-Chat-Aura
+Chat-Aura- A mern stack chat app
 
 
 
