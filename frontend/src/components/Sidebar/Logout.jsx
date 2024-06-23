@@ -1,6 +1,6 @@
 import React from 'react'
 import { RiLogoutBoxLine } from "react-icons/ri";
-import UseLogout from '../hooks/UseLogout';
+import UseLogout from '../../hooks/UseLogout';
 
 
 

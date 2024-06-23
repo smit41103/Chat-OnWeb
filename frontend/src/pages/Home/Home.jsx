@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Sidebar from "../../Sidebar/Sidebar";
-import MessageContainer from "../../MessageContainer/MessageContainer";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import MessageContainer from "../../components/MessageContainer/MessageContainer";
 const Home = () => {
   return (
     <div className="w-full h-full bg-[#100E09]">

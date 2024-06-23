@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useConversation from "../../zustand/useConversation";
+import useConversation from "../zustand/useConversation";
 import toast from  "react-hot-toast";
 
 const UseSendMessages = () => {
@@ -15,7 +15,9 @@ const UseSendMessages = () => {
                 body:JSON.stringify({message})  
             })
 
+
             const data = await res.json();
+            console.log(data);
             if(data.error){
                 throw new Error(data.error);
             }

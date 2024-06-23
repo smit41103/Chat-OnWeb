@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useConversation from "../../zustand/useConversation";
-import UseGetConversation from "../hooks/UseGetConversation";
+import UseGetConversation from "../../hooks/UseGetConversation";
 import { IoMdSearch } from "react-icons/io";
 import toast from "react-hot-toast";
 

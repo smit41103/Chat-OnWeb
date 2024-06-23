@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CiLocationArrow1 } from "react-icons/ci";
-import UseSendMessages from "../hooks/UseSendMessages";
+import UseSendMessages from "../../hooks/UseSendMessages";
 
 const MessageInput = () => {
   const [message,setMessage]=useState("");

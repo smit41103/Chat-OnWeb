@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Login from "./components/pages/Login/Login";
-import Signup from "./components/pages/Signup/Signup";
-import Home from "./components/pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import Home from "./pages/Home/Home";
 import {Navigate, Route,Routes} from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
-import { useAuthContext } from "./context/Authcontext";
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
   const [count, setCount] = useState(0);
