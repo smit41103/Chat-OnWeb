@@ -4,24 +4,24 @@ import { getReceiverSocketId, io } from "../socket/socket.js";
 export const sendMessage = async (req, res) => {
   try {
     const { message } = req.body;
-    const { id: recieverId } = req.params;
+    const { id: receiverId } = req.params;
     const senderId = req.user._id;
     
 
 
     let conversation =await Conversation.findOne({
-        participants:{$all:[senderId,recieverId]},
+        participants:{$all:[senderId,receiverId]},
     })
 
     if(!conversation){
         conversation = await Conversation.create({
-            participants:[senderId,recieverId]
+            participants:[senderId,receiverId]
         })
     }
 
     const newMessage = new Message ({
         senderId,
-        recieverId,
+        receiverId,
         message,
     })
     if(newMessage){
@@ -29,10 +29,10 @@ export const sendMessage = async (req, res) => {
     }
 
     await Promise.all([conversation.save(), newMessage.save()]);
-    const recieverSocketId = getReceiverSocketId(recieverId);
-		if (recieverSocketId) {
+    const receiverSocketId = getReceiverSocketId(receiverId);
+		if (receiverSocketId) {
 			// io.to(<socket_id>).emit() used to send events to specific client
-			io.to(recieverSocketId).emit("newMessage", newMessage);
+			io.to(receiverSocketId).emit("newMessage", newMessage);
 		}
 
     res.status(201).json({newMessage})
